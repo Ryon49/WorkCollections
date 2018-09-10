@@ -1,0 +1,15 @@
+	sanity PASSED test: Pipelined CPU add/lui/sll test
+	sanity PASSED test: Pipelined CPU memory test
+	sanity PASSED test: Pipelined CPU branch test
+	sanity PASSED test: Pipelined CPU jump test
+	sanity PASSED test: Pipelined CPU swge test
+	sanity PASSED test: Pipelined CPU br_jalr test
+
+
+sanity: 6/6 (6/6 tests passed, 0 partially)
+	Passed test "Pipelined CPU add/lui/sll test" worth 1 points.
+	Passed test "Pipelined CPU memory test" worth 1 points.
+	Passed test "Pipelined CPU branch test" worth 1 points.
+	Passed test "Pipelined CPU jump test" worth 1 points.
+	Passed test "Pipelined CPU swge test" worth 1 points.
+	Passed test "Pipelined CPU br_jalr test" worth 1 points.
