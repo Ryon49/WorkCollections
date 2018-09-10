@@ -1,0 +1,7 @@
+
+
+
+python3 tester.py --verbose samples/
+
+
+python3 tester.py --verbose --keep samples/
