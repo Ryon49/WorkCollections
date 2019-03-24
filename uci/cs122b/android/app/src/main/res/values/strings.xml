@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Fablix</string>
+    <string name="login_empty_email">Empty Email</string>
+    <string name="login_empty_password">Empty Password</string>
+    <string name="login_network_error">A network error has occurred</string>
+
+    <string name="search_title">Search</string>
+    <string name="search_hint">  Search By Movie Title</string>
+    <string name="search_empty_keyword">Search field is empty</string>
+
+</resources>

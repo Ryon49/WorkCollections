@@ -1,0 +1,89 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: linen;
+}
+
+td {
+    border-top-style: solid;
+}
+</style>
+</head>
+<body>
+
+<h2>Case of "not using PrepareStatement" and "not using connection pool" is ignored because I am using spring for my backend.
+  This is confirmed by Avinash Kumar in Piazza Post @679 and @627
+</h2>
+
+<table style="width:100%">
+  <tr style="font-weight:bold; background-color: orange">
+    <td width="300px">Single-instance version cases</td>
+    <td>Graph Results Screenshot</td>
+    <td>Average Query Time(ms)</td>
+    <td>Average Search Servlet Time(ms)</td>
+    <td>Average JDBC Time(ms)</td>
+    <td>Analysis</td>
+  </tr>
+  <tr>
+    <td>Case 1: HTTP/1 thread</td>
+    <td><img src="./jmeter-report-imgs/single_http_1_thread.png" alt="Graph Results Screenshot Case 1" style="width:304px;height:228px;"></td>
+    <td>75</td>
+    <td>[26.162488]</td>
+    <td>[26.158777]</td>
+    <td>This finished in a reasonable time because there is only 1 thread requesting and using all resources, no locking will occur</td>
+  </tr>
+  <tr>
+    <td>Case 2: HTTP/10 threads</td>
+    <td><img src="./jmeter-report-imgs/single_http_10_thread.png" alt="Graph Results Screenshot Case 2" style="width:304px;height:228px;"></td>
+    <td>620</td>
+    <td>[124.520668]</td>
+    <td>[124.519221]</td>
+    <td>I suspect that that time has largely increased due to the overhead of mysql locking resources for read. 
+      Also my throughput dropped a lot for the last few hundred requests, it might be the cause that aws t1.micro instance is exhausted and become slower to respond.</td>
+  </tr>
+  <tr>
+    <td>Case 3: HTTPS/10 threads</td>
+    <td><img src="./jmeter-report-imgs/single_https_10_thread.png" alt="Graph Results Screenshot Case 3" style="width:304px;height:228px;"></td>
+    <td>697</td>
+    <td>[238.713420]</td>
+    <td>[238.667389]</td>
+    <td>Very similar to the previous one, but also, I think for this case, it is possible that most sql queries go to different the mysql instance, introducing more network travel that cause TS, TJ time to be larger than the previous one</td>
+  </tr>
+
+</table> 
+
+
+<table style="width:100%">
+  <tr style="font-weight:bold; background-color: orange">
+      <td width="300px">Scaled version cases</td>
+      <td>Graph Results Screenshot</td>
+    <td>Average Query Time(ms)</td>
+    <td>Average Search Servlet Time(ms)</td>
+    <td>Average JDBC Time(ms)</td>
+    <td>Analysis</td>
+  </tr>
+  <tr>
+    <td>Case 1: HTTP/1 thread</td>
+    <td><img src="./jmeter-report-imgs/scaled_http_1_thread.png" alt="Graph Results Screenshot Case 1" style="width:304px;height:228px;"></td>
+    <td>60</td>
+    <td>[24.667690]</td>
+    <td>[24.655939]</td>
+    <td>This is so far the best score. I think it is because of the load being distributed to two aws instances. 
+      This does not exhaust the cpu usage and hence gives a better score.</td>
+  </tr>
+  <tr>
+    <td>Case 2: HTTP/10 threads</td>
+    <td><img src="./jmeter-report-imgs/scaled_http_10_thread.png" alt="Graph Results Screenshot Case 2" style="width:304px;height:228px;"></td>
+    <td>214</td>
+    <td>[177.059786]</td>
+    <td>[177.054843]</td>
+    <td>In this case, the performance of throughput and average query time are pretty stable compared to not using the load balancer. 
+      It might be the fact that the load balancer introduces a bit network travel that increase average query time</td>
+  </tr>
+
+</table> 
+
+</body>
+</html>

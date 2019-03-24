@@ -1,0 +1,17 @@
+.pagination {
+    margin-bottom: 0;
+    justify-content: center;
+}
+
+.pagination > li {
+    margin: 3px;
+    text-align: center;
+}
+
+.page-item.disabled .page-link {
+    background-color: #e3e2dd;
+}
+
+.page-link {
+    background-color: #e3e2dd;
+}

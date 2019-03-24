@@ -1,0 +1,40 @@
+.scheme-table {
+    margin: 20px 50px;
+}
+
+.fake-button {
+    color: blue;
+}
+
+.fake-button:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.dashboard-form {
+    margin: 20px 250px 50px 250px;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+}
+
+.dashboard-form .form-group .input-group > *:first-child {
+    margin-right: 0;
+}
+
+.dashboard-form .form-group .input-group .input-group-prepend .input-group-text {
+    width: 40px;
+}
+
+.dashboard-form .form-group .input-group .input-group-prepend .input-group-text > i {
+    color: gray;
+}
+
+.navitem-active {
+    background: #fff2ce;
+}
+
+.dashboard-error {
+    color: red;
+}

@@ -1,0 +1,13 @@
+.search-form > .input-group {
+    margin: 2px 0;
+}
+
+.search-form .input-group .input-group-prepend {
+    display: inline;
+    width:27%;
+    text-align:left;
+}
+
+.search-form > div:last-child {
+    margin: 10px 0;
+}

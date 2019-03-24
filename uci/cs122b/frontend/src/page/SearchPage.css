@@ -1,0 +1,32 @@
+.search-control {
+    grid-area: 2 / 1 / 3 / 2;
+    padding: 1em 0.5em;
+    overflow-y: scroll;
+
+}
+
+.search-movies {
+    grid-area: 2 / 2 / 3 / 4;
+    overflow-y: scroll;
+
+    display: grid;
+    grid-template-rows: repeat(11, min-content);
+    grid-row-gap: 15px;
+    padding: 10px 35px;
+}
+
+.search-paging {
+    grid-area: 3 / 2 / 4 / 4;
+    padding: 0 0.5em;
+}
+
+.search-paging > section {
+    padding: 0;
+}
+
+
+.search-copyright {
+    grid-area: 3 / 1 / 4 / 2;
+    /*padding: .2rem 0;*/
+    line-height: 37px;
+}

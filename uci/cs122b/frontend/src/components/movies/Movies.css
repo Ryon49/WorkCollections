@@ -1,0 +1,36 @@
+.card-container a:active {
+    color: #ff6201;
+}
+
+.card-container {
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 0 5px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.card-header {
+    color: #000;
+    background-color: #dcdbd6;
+}
+
+.card-header:hover {
+    cursor: pointer;
+}
+
+.card-header a:hover {
+    text-decoration: None;
+}
+
+.card-block {
+    padding: 0 50px;
+}
+
+.card-block > div {
+    margin: 2px 0 2px 0;
+}
+
+.grid-movies-description, .grid-movies-control {
+    height: 30px;
+    line-height: 30px;
+    box-shadow: none;
+    border-radius: 0;
+}

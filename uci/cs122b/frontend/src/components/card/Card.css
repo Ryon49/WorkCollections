@@ -1,0 +1,38 @@
+.stopChecking {
+    padding: 5px;
+}
+
+.stopChecking > i {
+    color: gray
+}
+
+.stopChecking:hover {
+    cursor: pointer;
+}
+
+.stopChecking:hover > i {
+    color: orange;
+}
+
+
+.card-form > .form-group {
+    margin: 2px 0;
+}
+
+.card-form > .form-group > .input-group .input-group-prepend {
+    width: 27%;
+}
+
+.card-form > .form-group > .input-group .input-group-prepend {
+    display: inline;
+    text-align:left;
+}
+
+.card-confirm-btn {
+    margin: 20px 0;
+}
+
+.card-confirm-btn > button {
+    width: 200px;
+
+}

@@ -1,0 +1,153 @@
+html, body, .grid-container {
+    margin: 0;
+}
+
+i {
+    color: orange;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    color: #007bff;
+}
+
+.marquee {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@keyframes push {
+    from {
+        margin: 0;
+    }
+    to {
+        margin: 100%;
+    }
+}
+
+.marquee > span {
+    font-size: 20px;
+    animation: 3s linear 0s infinite push;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/*Global Grid layout */
+.grid-container {
+    height: 100vh;
+    grid-gap: 5px;
+    border-radius: 5px;
+    background-color: #fff4e6;
+    position: relative;
+}
+
+.grid-container *:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 4fr 2.5fr;
+    grid-template-rows: max-content 6fr max-content;
+}
+
+.grid-container > div, .grid-container > header, .grid-container > section, .grid-container > footer {
+    border: 2px solid #000;
+    border-radius: 5px;
+    background-color: #e3e2dd;
+    color: #d9480f;
+}
+
+
+.grid-paging {
+    grid-area: 3 / 2 / 4 / 4;
+    padding: 0 0.5em;
+}
+
+.grid-paging > section {
+    padding: 0;
+}
+
+.grid-header {
+    grid-area: 1 / 1 / 2 / 2;
+    line-height: 50px;
+
+    /*grid-area: 1 / 1 / 2 / 3;*/
+}
+
+.gird-navigator {
+    grid-area: 1 / 2 / 2 / 4;
+    display: block;
+    line-height: 50px;
+    /*grid-area: 1 / 3 / 2 / 4;*/
+}
+
+.grid-control {
+    grid-area: 2 / 1 / 3 / 2;
+    padding: 1em 0.5em;
+    overflow-y: scroll;
+
+}
+
+
+.grid-movies {
+    grid-area: 2 / 2 / 3 / 4;
+    overflow-y: scroll;
+
+    display: grid;
+    grid-template-rows: repeat(12, min-content);
+    grid-row-gap: 15px;
+    padding: 10px 35px;
+}
+
+.grid-footer {
+    grid-area: 3 / 1 / 4 / 2;
+    /*padding: .2rem 0;*/
+    line-height: 37px;
+}
+
+/* end Global grid layout */
+
+.navigator-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr;
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.navigator-container > div, .navigator-container > section {
+    /*border: 1px solid black;*/
+}
+
+.navigator-login {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.navigator-nav {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.top-searchBar {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100%;
+    background: whitesmoke;
+}
+
+.top-searchBar > div {
+    display: inline-block;
+    vertical-align: middle;
+    /*line-height: 50px;*/
+}
+
+.top-searchBar > div > input {
+    margin-top: 7px;
+}
