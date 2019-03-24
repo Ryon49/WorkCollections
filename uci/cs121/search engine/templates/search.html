@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .search-box {
+            top: 25%;
+            width: 50%;
+            position: fixed;
+            margin: 0 25%;
+        }
+        #search-input {
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+    <form class="search-box" action="/result">
+        <label for="search-input">Search:&nbsp;&nbsp;</label>
+        <input id="search-input" name="keyword" placeholder="keyword"/>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

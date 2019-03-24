@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .text {
+            display: block;
+            width: 500px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+{% if results|length > 0 %}
+<h1>Found result for '{{keyword}}'</h1>
+<table class="table">
+    <thead class="thead-light ">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">URL</th>
+        <th scope="col">Phase</th>
+        <th scope="col">Score</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in range(results|length) %}
+    <tr>
+        <th scope="row">{{results[i][0]}}</th>
+        <td class="text"><a href="/redirect/{{results[i][0]}}">{{results[i][1]}}</a></td>
+        <td>{{results[i][2]}}</td>
+        <td>{{results[i][3]}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<h1>No result for '{{keyword}}'</h1>
+{% endif %}
+</body>
+</html>

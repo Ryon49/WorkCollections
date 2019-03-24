@@ -1,0 +1,4 @@
+pathos
+beautifulSoup4
+lxml
+nltk
