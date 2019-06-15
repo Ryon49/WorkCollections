@@ -1,0 +1,5 @@
+These are all ASCII chars
+A single symbol  and a single number 100000
+
+More ASCII chars
+Now a nonascii char

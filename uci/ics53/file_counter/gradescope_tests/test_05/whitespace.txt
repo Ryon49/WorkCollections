@@ -1,0 +1,5 @@
+Each line has a newline at the end.
+This line has a carriage return before the period.
+	This line begins with a tab.
+This line has a vertical tab before the comma,
+This line starts with the fromfeed characteri.

@@ -1,0 +1,8 @@
+These are all ASCII chars
+A single symbol ! and a single number 100000
+
+More ASCII chars
+Now a non-ascii charÿ a y with two dots above
+A second symbol @ and a second number 3
+
+More ASCII chars

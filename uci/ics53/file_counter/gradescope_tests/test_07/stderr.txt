@@ -1,0 +1,6 @@
+ little bugs in the code,
+ bugs in the code,
+fix  bug, compile it again,
+ little bugs in the code.
+ little bugs in the code.....
+(Repeat until BUGS = )

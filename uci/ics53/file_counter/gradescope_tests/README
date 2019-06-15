@@ -1,0 +1,57 @@
+Gradescope Basic Tests
+
+Each folder in this directory contains the file used for stdin and the expected output (stdout and stderr). Your implementation of 53wc should create identical stdout and stderr output as provided in these files. 
+
+All files in these folders are Read-only. However it is still possible to overwrite these files with your own tests! Be careful!!!
+
+The following command is run for each provided test:
+
+1. Empty File
+$ bin/53wc -N < empty.txt
+
+2. Bad Argument
+$ bin/53wc -P < anteatersGO.txt
+
+3. -S with symbols.txt
+$ bin/53wc -S < symbols.txt > stdout.txt 2> empty.txt
+
+4. -N with bugsInCode.txt 
+$ bin/53wc -N < bugsInCode.txt > stdout.txt 2> stderr.txt
+
+5. -L with whitespace.txt
+$ bin/53wc -L < whitespace.txt > stdout.txt 2> empty.txt
+
+6. -S -O with symbols.txt
+$ bin/53wc -S -O < symbols.txt > stdout.txt 2> stderr.txt
+
+7. -N -O with bugsInCode.txt
+$ bin/53wc -N -O < bugsInCode.txt > stdout.txt 2> stderr.txt
+
+8. -L -O with nums_spaces4.py 
+$ bin/53wc -L -O < nums_spaces4.py > stdout.txt 2> stderr.txt
+
+9. -L -O with whitespace.txt  
+$ bin/53wc -L -O < whitespace.txt > stdout.txt 2> stderr.txt
+
+10. -E 4 with nums_tabs.py 
+$ bin/53wc -E 4 < nums_tabs.py > stdout.txt 2> stderr.txt
+
+11. -E 8 with nums_tabs.py
+$ bin/53wc -E 8 < nums_tabs.py > stdout.txt 2> stderr.txt
+
+12. -E 4 -O with nums_tabs.py
+$ bin/53wc -E 4 -O < nums_tabs.py > stdout.txt 2> stderr.txt
+
+13. -C 4 with nums_tabs.py
+$ bin/53wc -C 4 < nums_tabs.py > stdout.txt 2> stderr.txt
+
+14. -C 3 with nums_spaces4.py
+$ bin/53wc -C 3 < num_spaces4.py > stdout.txt 2> stderr.txt
+
+15. -C 4 -O with nums_tabs.py
+$ bin/53wc -C 4 -O < nums_tabs.py > stdout.txt 2> stderr.txt
+
+16. -S -O with a non-ascii character
+$ bin/53wc -S -O < nonASCIIchar.txt > stdout.txt 2> stderr.txt
+
+
